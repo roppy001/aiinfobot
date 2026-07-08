@@ -39,9 +39,9 @@ scrape_sources:
     link_selector: "a"
 
   - name: "富士通 プレスリリース"
-    url: "https://info.archives.global.fujitsu/jp/news/"  # 要確認: 移転している可能性あり
-    base_url: "https://www.fujitsu.com"
-    list_selector: "li"
+    url: "https://global.fujitsu/ja-jp/pr"
+    base_url: "https://global.fujitsu"
+    list_selector: "li"           # 要確認: 日付・タイトル・カテゴリタグ形式のリスト
     title_selector: "a"
     link_selector: "a"
 
@@ -53,22 +53,22 @@ scrape_sources:
     link_selector: "a"
 
   - name: "NEC プレスリリース"
-    url: "https://www.nec.com/press/ja/"
-    base_url: "https://www.nec.com"
-    list_selector: "li"           # 要確認: アクセスブロックの可能性あり（要検証）
+    url: "https://group.nec/global/ja/"
+    base_url: "https://group.nec"
+    list_selector: "li"           # 要確認: 自動アクセスが403で拒否される可能性が高い（要検証）
     title_selector: "a"
     link_selector: "a"
 
   - name: "日本アイ・ビー・エム ニュースルーム"
-    url: "https://newsroom.ibm.com/Japan"  # 要確認: 正しいURLか要調査
-    base_url: "https://newsroom.ibm.com"
-    list_selector: "li"
+    url: "https://jp.newsroom.ibm.com/announcements"
+    base_url: "https://jp.newsroom.ibm.com"
+    list_selector: "li"           # 要確認: トップページ(https://jp.newsroom.ibm.com/)の「すべて表示」先
     title_selector: "a"
     link_selector: "a"
 
   - name: "アクセンチュア ニュースルーム"
-    url: "https://www.accenture.com/jp-ja/newsroom"
-    base_url: "https://www.accenture.com"
-    list_selector: "li"           # 要確認: アクセスブロックの可能性あり（要検証）
+    url: "https://newsroom.accenture.jp/"
+    base_url: "https://newsroom.accenture.jp"
+    list_selector: "li"           # 要確認: JavaScriptで描画されるページの可能性があり、静的取得では0件になる恐れあり
     title_selector: "a"
     link_selector: "a"
