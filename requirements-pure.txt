@@ -1,0 +1,3 @@
+# feedparserは依存パッケージ(sgmllib3k)がwheelを提供していないため、
+# build.shではrequirements-binary.txtとは別に、プラットフォーム指定なしでインストールする。
+feedparser==6.0.11

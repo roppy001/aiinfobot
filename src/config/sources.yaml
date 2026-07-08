@@ -1,0 +1,74 @@
+# AIニュース収集対象のソース定義
+# rss_sources: RSSフィードが確認済みのソース（feedparserで取得）
+# scrape_sources: RSSが存在しないため、HTMLスクレイピングで取得するソース
+#   list_selector / title_selector / link_selector はCSSセレクタ。
+#   サイトのHTML構造は変更されることがあるため、動作しない場合は要調整。
+
+rss_sources:
+  - name: "TechCrunch (AI)"
+    url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+  - name: "ITmedia AI+"
+    url: "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml"
+  - name: "OpenAI News"
+    url: "https://openai.com/news/rss.xml"
+  - name: "Google DeepMind Blog"
+    url: "https://deepmind.google/blog/rss.xml"
+  - name: "Preferred Networks Tech Blog"
+    url: "https://tech.preferred.jp/en/blog/feed/"
+
+scrape_sources:
+  - name: "Anthropic News"
+    url: "https://www.anthropic.com/news"
+    base_url: "https://www.anthropic.com"
+    list_selector: "table tr"     # 要確認: テーブル形式の一覧
+    title_selector: "a"
+    link_selector: "a"
+
+  - name: "Sakana AI Blog"
+    url: "https://sakana.ai/blog/"
+    base_url: "https://sakana.ai"
+    list_selector: "article"      # 要確認
+    title_selector: "h2, h3"
+    link_selector: "a"
+
+  - name: "NTTデータグループ ニュースリリース"
+    url: "https://www.nttdata.com/jp/ja/news/"
+    base_url: "https://www.nttdata.com"
+    list_selector: "li"           # 要確認
+    title_selector: "a"
+    link_selector: "a"
+
+  - name: "富士通 プレスリリース"
+    url: "https://info.archives.global.fujitsu/jp/news/"  # 要確認: 移転している可能性あり
+    base_url: "https://www.fujitsu.com"
+    list_selector: "li"
+    title_selector: "a"
+    link_selector: "a"
+
+  - name: "日立製作所 プレスリリース"
+    url: "https://www.hitachi.com/ja-jp/press/"
+    base_url: "https://www.hitachi.com"
+    list_selector: "li"           # 要確認
+    title_selector: "a"
+    link_selector: "a"
+
+  - name: "NEC プレスリリース"
+    url: "https://www.nec.com/press/ja/"
+    base_url: "https://www.nec.com"
+    list_selector: "li"           # 要確認: アクセスブロックの可能性あり（要検証）
+    title_selector: "a"
+    link_selector: "a"
+
+  - name: "日本アイ・ビー・エム ニュースルーム"
+    url: "https://newsroom.ibm.com/Japan"  # 要確認: 正しいURLか要調査
+    base_url: "https://newsroom.ibm.com"
+    list_selector: "li"
+    title_selector: "a"
+    link_selector: "a"
+
+  - name: "アクセンチュア ニュースルーム"
+    url: "https://www.accenture.com/jp-ja/newsroom"
+    base_url: "https://www.accenture.com"
+    list_selector: "li"           # 要確認: アクセスブロックの可能性あり（要検証）
+    title_selector: "a"
+    link_selector: "a"

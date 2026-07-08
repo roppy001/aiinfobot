@@ -62,7 +62,7 @@ EventBridge (cron, 0:00 UTC = 9:00 JST)
 ## 4. 非機能要件
 | 項目 | 内容 |
 |---|---|
-| 実行環境 | AWS Lambda（Python 3.12等の最新安定版） |
+| 実行環境 | AWS Lambda（Python 3.13。openaiの依存パッケージjiterがcp314向けwheel未提供のため3.14は不可） |
 | 実行時間 | 情報収集〜要約〜投稿までを想定し、タイムアウトは3〜5分程度で設定（要検証） |
 | メモリ | 256〜512MB程度を想定（要検証） |
 | シークレット管理 | Lambdaの環境変数（`OPENAI_API_KEY`, `DISCORD_WEBHOOK_URL`）に平文で設定する。**個人利用のためSecrets Manager／Parameter Storeは使用せず、リスクは承知の上で簡易運用とする**。`.env`やコード内へのハードコードは行わず、必ずLambdaの環境変数機能経由で設定する。リポジトリにAPIキー等を誤ってコミットしないよう`.gitignore`を徹底する |
